@@ -19,7 +19,8 @@ BuildRequires: perl(File::Temp)
 BuildRequires: perl(Moose)
 BuildRequires: perl(Scalar::Util)
 BuildRequires: perl(Test::DistManifest)
-BuildRequires: perl(Test::More)
+BuildRequires: perl(Test::More) >= 0.940.0
+
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
@@ -34,7 +35,6 @@ providing the following files
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-
 %make
 
 %check
@@ -52,5 +52,3 @@ rm -rf %buildroot
 %doc Changes LICENSE META.yml META.json README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
